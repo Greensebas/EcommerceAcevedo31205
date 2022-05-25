@@ -2,7 +2,7 @@ function NavBar() {
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
       <a className="navbar-brand" href="google.com">
-        <img src="img/wapp.png" alt="" width="50" height="56"></img>
+        <img src="img/wapp.png" alt="" width="50" height="56"></img>Brand
       </a>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
@@ -27,6 +27,10 @@ function NavBar() {
           </li>
         </ul>
       </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input>
+        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+      </form>
     </div>
   </nav>
   }
