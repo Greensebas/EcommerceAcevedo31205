@@ -1,3 +1,6 @@
+import CartWidget from "./CartWidget";
+
+
 function NavBar() {
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
@@ -31,6 +34,7 @@ function NavBar() {
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input>
         <button class="btn btn-outline-secondary" type="submit">Buscar</button>
       </form>
+      <CartWidget />
     </div>
   </nav>
   }
