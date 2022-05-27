@@ -4,41 +4,41 @@ import CartWidget from "./CartWidget";
 function NavBar() {
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
-      <a className="navbar-brand" href="google.com">
-        <img src="img/wapp.png" alt="" width="50" height="56"></img>Brand
+      <a className="navbar-brand" href="https://google.com">
+        <img src="img/FIODORA-PNG.png" alt="" width="40" height="60"></img>
       </a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="google.com">Inicio</a>
+            <a className="nav-link active" aria-current="page" href="https://google.com">Inicio</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="google.com">Noticias</a>
+            <a className="nav-link" href="https://google.com">Noticias</a>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="google.com" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a className="nav-link dropdown-toggle" href="https://google.com" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a className="dropdown-item" href="google.com">Producto 1</a></li>
-              <li><a className="dropdown-item" href="google.com">Producto 2</a></li>
-              <li><a className="dropdown-item" href="google.com">Producto 3</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Ver todo en productos</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Agendas</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Fotolibros</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Abuelos</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Bebés</a></li>
+              <li><a className="dropdown-item" href="https://google.com">Bautismos y comuniones</a></li>
             </ul>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="google.com">Contacto</a>
+            <a className="nav-link" href="https://google.com">Contacto</a>
           </li>
         </ul>
       </div>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input>
-        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-      </form>
       <CartWidget />
     </div>
   </nav>
   }
   
   export default NavBar;
-  
-    
