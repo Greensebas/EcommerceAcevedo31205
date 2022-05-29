@@ -1,4 +1,4 @@
-import CartWidgetContainer from "./CartWidgetContainer";
+import CartWidgetContainer from "./CartWidget/CartWidgetContainer";
 
 
 function NavBar() {
@@ -10,10 +10,10 @@ function NavBar() {
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+      <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="https://google.com">Inicio</a>
+            <a className="nav-link" aria-current="page" href="https://google.com">Inicio</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="https://google.com">Noticias</a>
@@ -34,9 +34,9 @@ function NavBar() {
           <li className="nav-item">
             <a className="nav-link" href="https://google.com">Contacto</a>
           </li>
+          <CartWidgetContainer />
         </ul>
       </div>
-      <CartWidgetContainer />
     </div>
   </nav>
   }
