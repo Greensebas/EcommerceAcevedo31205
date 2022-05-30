@@ -1,9 +1,9 @@
 import React from 'react'
+import ItemListLayout from './ItemListLayout'
 
 function ItemListContainer() {
-  return (
-    <div>ItemListContainer</div>
-  )
+  let greeting = 'SOMOS FIODORA DISEÑO GRÁFICO';
+  return <ItemListLayout greeting = {greeting}/>
 }
 
 export default ItemListContainer
