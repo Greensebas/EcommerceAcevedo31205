@@ -1,5 +1,5 @@
 import React from "react";
-import './CartWidget.css';
+import './cartWidget.css';
 
 function CartWidgetLayout({cantProd}) {
   return (

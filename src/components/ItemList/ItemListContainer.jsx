@@ -1,4 +1,5 @@
 import React from 'react'
+import "./itemList.css";
 import ItemListLayout from './ItemListLayout'
 
 function ItemListContainer() {

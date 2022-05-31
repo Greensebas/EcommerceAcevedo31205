@@ -1,5 +1,5 @@
 import React from "react";
-import './CartWidget.css';
+import './cartWidget.css';
 import CartWidgetLayout from "./CartWidgetLayout";
 
 function CartWidgetContainer() {
