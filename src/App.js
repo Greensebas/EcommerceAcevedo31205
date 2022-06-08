@@ -2,6 +2,7 @@ import './App.css';
 import HeroContainer from './components/Hero/HeroContainer';
 import ItemCount from './components/ItemList/ItemCount';
 import ItemListContainer from './components/ItemList/ItemListContainer';
+import ItemListLayout from './components/ItemList/ItemListLayout';
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -14,6 +15,7 @@ function App() {
   return (
   <div>
     <NavBar />
+    <ItemListLayout greeting="SOMOS FIODORA DISEÑO GRÁFICO" />
     <ItemListContainer />
     <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
     <HeroContainer />
