@@ -118,7 +118,7 @@ function ItemListContainer() {
 export default ItemListContainer;
 
 
-
+// ESTO ES PARA HACERLO CON FETCH Y TOMAR LOS PRODUCTOS DESDE EL .JSON
 
 // function ItemListContainer() {
 //   const [productos, setProductos] = useState([]);
