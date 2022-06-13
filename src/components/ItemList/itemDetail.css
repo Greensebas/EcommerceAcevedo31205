@@ -1,0 +1,29 @@
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.countContainer {
+    background-color: #000;
+}
+
+.enlaces {
+    background-color: #000;
+    display: inline;
+}
+
+.enlaces a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1px 2px;
+}
+
+.enlaces a:hover{
+    background-color: #fff;
+    color: #000;
+}

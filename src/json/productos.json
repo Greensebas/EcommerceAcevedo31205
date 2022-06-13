@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "imagen": "img/diario-embarazo.jpeg",
+      "imagen": "img/diarioEmbarazo/diario-embarazo.jpeg",
       "tipo": "Diario",
       "descripcion": "Diario de embarazo y primer año del bebé con stickers en vinilo",
       "precio": 2250,

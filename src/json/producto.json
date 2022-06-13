@@ -1,8 +1,14 @@
   {
     "id": 1,
-    "imagen": "img/diario-embarazo.jpeg",
+    "imagen": "img/diarioEmbarazo/diario-embarazo.jpeg",
+    "imagen2": "img/diarioEmbarazo/diarioEmbarazo2.jpeg",
+    "imagen3": "img/diarioEmbarazo/diarioEmbarazo3.jpeg",
+    "imagen4": "img/diarioEmbarazo/diarioEmbarazo4.jpeg",
+    "imagen5": "img/diarioEmbarazo/diarioEmbarazo5.jpeg",
+    "imagen6": "img/diarioEmbarazo/diarioEmbarazo26.jpeg",
     "tipo": "Diario",
     "descripcion": "Diario de embarazo y primer año del bebé con stickers en vinilo",
+    "descripcionDetalle": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "precio": 2250,
     "stock": 7
   }

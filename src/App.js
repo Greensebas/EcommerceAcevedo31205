@@ -1,6 +1,6 @@
 import './App.css';
 import HeroContainer from './components/Hero/HeroContainer';
-// import ItemCount from './components/ItemList/ItemCount';
+import ItemCount from './components/ItemList/ItemCount';
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import ItemListContainer from './components/ItemList/ItemListContainer';
 import ItemListLayout from './components/ItemList/ItemListLayout';
@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 
 
 function App() {
+
 
 
     
@@ -31,4 +32,5 @@ export default App;
   }
 
     <ItemCount inicial={1} stock={5} onAdd={onAdd}/>
+
  */

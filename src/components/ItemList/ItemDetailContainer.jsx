@@ -5,6 +5,7 @@ import productoJson from '../../json/producto.json'
 
 
 function ItemDetailContainer() {
+
     const [producto, setProductos] = useState([]);
     const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState(false);
