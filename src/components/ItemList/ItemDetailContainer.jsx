@@ -1,6 +1,7 @@
 import React from 'react'
 import {useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
+import productoJson from '../../json/producto.json'
 
 
 function ItemDetailContainer() {
@@ -8,22 +9,12 @@ function ItemDetailContainer() {
     const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState(false);
   
-    const arrayProductos = [ // si saco los [] para que quede solo como un objeto me tira error
-      {
-        id: 1,
-        imagen: "img/diario-embarazo.jpeg",
-        tipo: "Diario",
-        descripcion: "Diario de embarazo y primer año del bebé con stickers en vinilo",
-        precio: 2250,
-        stock: 7
-      },
-    ]
   
     useEffect(() => {
       const productosPromise = new Promise((resolve, reject) => {
         setLoading(true)
         setTimeout(() => {
-          resolve(arrayProductos);
+          resolve(productoJson);
         }, 2000);
       })
   
@@ -39,8 +30,6 @@ function ItemDetailContainer() {
           setLoading(false)
         })
     }, []);
-  
-  console.log(producto)
 
     return (
       <>
