@@ -1,0 +1,17 @@
+.saludo{
+    /* background-image: linear-gradient(rgba(5, 7, 12, 0.20), rgba(5, 7, 12, 0.20)), 
+    url(../../../public/img/FiodoraBannerBN.jpg);  */
+    background-image: url(../../../public/img/FiodoraBannerBN.jpg); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+  }
+
+.divMargin {
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}

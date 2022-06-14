@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import "./itemList.css";
 import productosJson from "../../json/productos.json"
+import { useParams } from "react-router-dom";
 
 
 function ItemListContainer() {
+  const {id} = useParams();
+  console.log(id);
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -14,7 +17,7 @@ function ItemListContainer() {
     const productosPromise = new Promise((resolve, reject) => {
       setLoading(true)
       setTimeout(() => {
-        resolve(productosJson);
+        (!id) ? resolve(productosJson) : resolve(productosJson.filter(producto => producto.categoria === id))
       }, 2000);
     })
 
@@ -29,7 +32,7 @@ function ItemListContainer() {
       .finally(() => {
         setLoading(false)
       })
-  }, []);
+  }, [id]);
 
 
   return (

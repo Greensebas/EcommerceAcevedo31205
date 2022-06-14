@@ -1,11 +1,11 @@
 import React from "react";
-import "./itemList.css";
+import "./banner.css";
 
-function ItemListLayout({ greeting }) {
+function Banner() {
   return (
     <div className="saludo">
       <div className="divMargin">
-        <h1>{greeting}</h1>
+        <h1>"SOMOS FIODORA DISEÑO GRÁFICO"</h1>
         <p>FIODORA es un espacio dedicado a la encuadernación artesanal de agendas, fotolibros, cuadernos y 
            libretas cuidando hasta el último detalle </p>
       </div>
@@ -13,5 +13,5 @@ function ItemListLayout({ greeting }) {
   );
 }
 
-export default ItemListLayout;
+export default Banner;
 

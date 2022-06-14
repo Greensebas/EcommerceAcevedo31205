@@ -8,7 +8,7 @@ function ItemDetail({ producto }) {
   }
 
   const {
-    tipo,
+    categoria,
     descripcion,
     descripcionDetalle,
     precio,
@@ -25,19 +25,19 @@ function ItemDetail({ producto }) {
         <hr />
         <div className="row mt-5">
           <div className="col-lg-5 col-md-12 col-12">
-            <img className="img-fluid w-100 pb-1" src={imagen} alt={tipo} />
+            <img className="img-fluid w-100 pb-1" src={imagen} alt={categoria} />
             <div className="small-img-group">
               <div className="small-img-col">
-                <img className="small-img w-100" src={imagen} alt={tipo} />
+                <img className="small-img w-100" src={imagen} alt={categoria} />
               </div>
               <div className="small-img-col">
-                <img className="small-img w-100" src={imagen2} alt={tipo} />
+                <img className="small-img w-100" src={imagen2} alt={categoria} />
               </div>
               <div className="small-img-col">
-                <img className="small-img w-100" src={imagen3} alt={tipo} />
+                <img className="small-img w-100" src={imagen3} alt={categoria} />
               </div>
               <div className="small-img-col">
-                <img className="small-img w-100" src={imagen4} alt={tipo} />
+                <img className="small-img w-100" src={imagen4} alt={categoria} />
               </div>
             </div>
           </div>
