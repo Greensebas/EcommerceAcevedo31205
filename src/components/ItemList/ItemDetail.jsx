@@ -1,8 +1,11 @@
 import "./itemDetail.css";
 import ItemDetailCount from './ItemDetailCount';
+import {Link} from "react-router-dom";
 
 function ItemDetail({ producto }) {
   
+  console.log(producto);
+
   const onAdd = (count) => {
     alert(`Agregaste ${count} productos al carrito`);
   }
@@ -46,10 +49,10 @@ function ItemDetail({ producto }) {
             <div>
               <div className="enlaces">
                 <span>
-                  <a href="x">Home / </a>
+                <Link to="/home">Inicio</Link>
                 </span>
                 <span>
-                  <a href="x"> Diarios / </a>
+                <Link to={`/categoria/${categoria}`}>{categoria}</Link>
                 </span>
                 <span>
                   <a href="x"> {descripcion} </a>

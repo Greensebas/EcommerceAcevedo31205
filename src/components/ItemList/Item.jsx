@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Item({producto}) {
-    const {categoria, descripcion, precio, stock, imagen} = producto
+    const {id, categoria, descripcion, precio, stock, imagen} = producto
   return (
     <div className="card" style={{ width: "15rem", margin: "20px" }}>
         <img src={imagen} class="card-img-top" alt="..."></img>
@@ -12,7 +13,7 @@ function Item({producto}) {
               Precio: {precio} <br />
               Stock: {stock}
           </p>
-          <a href="asdf" class="btn btn-primary">Ver detalle</a>
+          <Link to={`/producto/${id}`} className="btn btn-primary">Ver detalle</Link>
         </div>
     </div>
   )
