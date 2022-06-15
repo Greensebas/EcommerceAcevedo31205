@@ -49,10 +49,10 @@ function ItemDetail({ producto }) {
             <div>
               <div className="enlaces">
                 <span>
-                <Link to="/home">Inicio</Link>
+                <Link to="/home"> Inicio </Link>
                 </span>
                 <span>
-                <Link to={`/categoria/${categoria}`}>{categoria}</Link>
+                <Link to={`/categoria/${categoria}`}> {categoria} </Link>
                 </span>
                 <span>
                   <a href="x"> {descripcion} </a>
