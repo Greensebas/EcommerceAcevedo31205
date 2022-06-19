@@ -7,10 +7,13 @@ import ItemDetailContainer from './components/ItemList/ItemDetailContainer';
 import Contacto from './components/Contacto/Contacto';
 import Footer from './components/Footer/Footer';
 import Banner from './components/ItemList/Banner';
+import { createContext } from 'react';
 
+export const CardContext = createContext({});
 
 function App() {
   return (<>
+    <CardContext.Provider value={{nombre:"sebastian", apellido:"acevedo"}}>
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -24,18 +27,10 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </CardContext.Provider>
   </>
 
   );
 }
 
 export default App;
-
-// ESTO PODRÍA IR EN EL COMPONENTE HOME SI ES QUE LO PERMITEN
-  // <div>
-  //   <NavBar />
-  //   <Banner greeting="SOMOS FIODORA DISEÑO GRÁFICO" />
-  //   <ItemListContainer />
-  //   <HeroContainer />
-  //   <ItemDetailContainer />
-  // </div>

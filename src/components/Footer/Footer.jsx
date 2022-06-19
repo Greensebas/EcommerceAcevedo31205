@@ -1,8 +1,11 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CardContext } from '../../App'
 
 function Footer() {
+  const {nombre, apellido} = useContext(CardContext)
   return (
-    <div>Esto va a ser un tremendo footer</div>
+    <div>{nombre} <br></br>{apellido}</div>
   )
 }
 

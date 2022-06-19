@@ -41,10 +41,3 @@ function NavBar() {
   }
   
   export default NavBar;
-
-
-/*
-
-  <a className="nav-link" aria-current="page" href="https://google.com">Inicio</a>
-
-*/

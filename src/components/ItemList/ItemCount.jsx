@@ -21,15 +21,8 @@ function ItemCount ({inicial, stock, onAdd}) {
   return (
     <>
       <div className="flex-container">
-        <div className="card text-center card-container" style={{ width: "18rem" }}>
+        <div className="text-center">
           <div className="card-body">
-            <div>
-                <img src="img/libretaVacunacion.jpeg" alt="" width="180" height="240"></img>
-            </div>            
-            <h4 className="card-title">Producto</h4>
-            <p className="card-text">
-              Breve descripción del producto.
-            </p>
             <div className="contenedor">
                 <button className="boton" onClick={restar}>
                     <span className="span s1"></span>
