@@ -1,22 +1,6 @@
-import React, { useState } from 'react'
 import "./itemCount.css";
 
-function ItemCount ({inicial, stock, onAdd}) {
-    const [count, setCount] = useState(inicial);
-
-    const sumar = () => {
-        count < stock? setCount(count + 1) : alert("No puedes agregar más productos")
-    }
-
-    const restar = () => {
-        count > inicial? setCount(count - 1) : alert("No puedes solicitar menos de 1 producto")
-    }
-
-    const reset = () => {
-        setCount(inicial);
-    }
-
-
+function ItemCount ({sumar, restar, reset, count, onAdd}) {
 
   return (
     <>

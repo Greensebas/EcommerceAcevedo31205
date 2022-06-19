@@ -1,14 +1,32 @@
 import "./itemDetail.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { useState } from "react";
 
 function ItemDetail({ producto }) {
-  
-  console.log(producto);
+  const [count, setCount] = useState(1);
+  const [display, setDisplay] = useState(true);
+
+  const sumar = () => {
+    count < stock
+      ? setCount(count + 1)
+      : alert("No puedes agregar más productos");
+  };
+
+  const restar = () => {
+    count > 1
+      ? setCount(count - 1)
+      : alert("No puedes solicitar menos de 1 producto");
+  };
+
+  const reset = () => {
+    setCount(1);
+  };
 
   const onAdd = (count) => {
     alert(`Agregaste ${count} productos al carrito`);
-  }
+    setDisplay(false);
+  };
 
   const {
     categoria,
@@ -28,7 +46,7 @@ function ItemDetail({ producto }) {
         <hr />
         <div className="row mt-5">
           <div className="col-lg-5 col-md-12 col-12">
-            <img className="img-fluid w-100 pb-1" src={imagen} alt={categoria} />
+            <img className="img-fluid w-100 pb-1" src={imagen} alt={categoria}/>
             <div className="small-img-group">
               <div className="small-img-col">
                 <img className="small-img w-100" src={imagen} alt={categoria} />
@@ -49,10 +67,10 @@ function ItemDetail({ producto }) {
             <div>
               <div className="enlaces">
                 <span>
-                <Link to="/home"> Inicio </Link>
+                  <Link to="/home"> Inicio </Link>
                 </span>
                 <span>
-                <Link to={`/categoria/${categoria}`}> {categoria} </Link>
+                  <Link to={`/categoria/${categoria}`}> {categoria} </Link>
                 </span>
                 <span>
                   <a href="x"> {descripcion} </a>
@@ -63,9 +81,34 @@ function ItemDetail({ producto }) {
             </div>
             <h4>Detalle del producto</h4>
             <span>{descripcionDetalle}</span>
-            <div className="count-container">
-              <ItemCount inicial={1} stock={stock} onAdd={onAdd}/>
-            </div>
+
+            {display ? (
+              <div className="count-container">
+                <ItemCount
+                  sumar={sumar}
+                  restar={restar}
+                  reset={reset}
+                  count={count}
+                  onAdd={onAdd}
+                />
+              </div>
+            ) : (
+              <div className="flex-cont">
+                <div className="text-center">
+                  <div className="card-body">
+                    <div>
+                      <Link to={`/cart`} className="boton boton-link">
+                        <span className="span s1"></span>
+                        <span className="span s2"></span>
+                        <span className="span s3"></span>
+                        <span className="span s4"></span>
+                        Ir al carrito
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -75,14 +118,7 @@ function ItemDetail({ producto }) {
 
 export default ItemDetail;
 
-// <ul>
-//   <li>
-//     <a href="">Home</a>
-//   </li>
-//   <li>
-//     <a href="">Diarios</a>
-//   </li>
-//   <li>
-//     <a href="">{descripcion}</a>
-//   </li>
-// </ul>
+/*
+
+
+*/

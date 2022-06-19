@@ -8,12 +8,13 @@ import Contacto from './components/Contacto/Contacto';
 import Footer from './components/Footer/Footer';
 import Banner from './components/ItemList/Banner';
 import { createContext } from 'react';
+import Cart from './components/Cart/Cart';
 
 export const CardContext = createContext({});
 
 function App() {
   return (<>
-    <CardContext.Provider value={{nombre:"sebastian", apellido:"acevedo"}}>
+    <CardContext.Provider value={{nombre:"Sebastian", apellido:"Acevedo"}}>
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/categoria/:id" element={<ItemListContainer />} />
         <Route path="/producto/:id" element={<ItemDetailContainer />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

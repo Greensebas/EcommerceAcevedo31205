@@ -5,7 +5,7 @@ import { CardContext } from '../../App'
 function Footer() {
   const {nombre, apellido} = useContext(CardContext)
   return (
-    <div>{nombre} <br></br>{apellido}</div>
+    <div>{nombre} {apellido}</div>
   )
 }
 

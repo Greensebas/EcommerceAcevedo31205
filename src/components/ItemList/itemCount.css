@@ -35,6 +35,12 @@
     color: rgb(202, 198, 198);
     transition: 0.5s;
     overflow: hidden;
+    text-decoration: none;
+}
+
+.boton a {
+        overflow: hidden;
+        outline: none;
 }
 
 .boton:hover {
