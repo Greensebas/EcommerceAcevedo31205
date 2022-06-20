@@ -97,12 +97,15 @@ function ItemDetail({ producto }) {
                 <div className="text-center">
                   <div className="card-body">
                     <div>
-                      <Link to={`/cart`} className="boton boton-link">
-                        <span className="span s1"></span>
-                        <span className="span s2"></span>
-                        <span className="span s3"></span>
-                        <span className="span s4"></span>
-                        Ir al carrito
+                      <Link to={`/cart`}>
+                        <button className="boton">
+                          <span className="span s1"></span>
+                          <span className="span s2"></span>
+                          <span className="span s3"></span>
+                          <span className="span s4"></span>
+                          Ir al carrito
+                        </button>
+                          
                       </Link>
                     </div>
                   </div>

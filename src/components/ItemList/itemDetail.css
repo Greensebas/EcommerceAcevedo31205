@@ -42,6 +42,15 @@
     overflow: hidden;
 }
 
+.boton {
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: rgba(103, 101, 103, 0.623);
+    color: rgb(202, 198, 198);
+    transition: 0.5s;
+    overflow: hidden;
+}
 /* .flex-container {
     background-color: #000;
     display: flex;
@@ -57,16 +66,7 @@
     color: #fff;
 }
 
-.boton {
-    position: relative;
-    padding: 5px 10px;
-    border: none;
-    outline: none;
-    background-color: rgba(103, 101, 103, 0.623);
-    color: rgb(202, 198, 198);
-    transition: 0.5s;
-    overflow: hidden;
-}
+
 
 .boton:hover {
     cursor: pointer;
