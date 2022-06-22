@@ -40,7 +40,7 @@ function ItemDetail({ producto }) {
   };
 
   const onAdd = (count) => {
-    alert(`Agregaste ${count} productos al carrito`);
+    // alert(`Agregaste ${count} productos al carrito`);
     isInCart(producto.id);
     addItem(producto, count)
     setDisplay(false);

@@ -3,8 +3,6 @@ import { CartContext } from "../../Context/CartContext";
 
 function Cart() {
   const { cart, getItemPrice, emptyCart, deleteItem } = useContext(CartContext);
-  console.log(cart);
-  console.log(cart.length);
 
   return (
     <div className="container top-navbar py-5">
@@ -12,7 +10,7 @@ function Cart() {
         {cart.length > 0 ? (
           <>
             <div className="col-md-8">
-              <table class="table table-striped text-center">
+              <table className="table table-striped text-center">
                 <thead>
                   <tr>
                     <th>titulo</th>
