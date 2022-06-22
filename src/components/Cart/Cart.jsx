@@ -4,33 +4,47 @@ import { CartContext } from "../../Context/CartContext";
 function Cart() {
   const { cart, getItemPrice, emptyCart, deleteItem } = useContext(CartContext);
   console.log(cart);
-  console.log(cart.length)
+  console.log(cart.length);
 
   return (
-    <>
-    <div className="row">
-      <hr />
-      {cart.length > 0 ? (
-        cart.map((element) => {
-          return (
-            <div key={element.id}>
-              <div >
-                <h2>{element.descripcion}</h2>
-                <h3>{element.count}</h3>
-                <button onClick={() => {deleteItem(element.id)}}>quitar item</button>
-              </div>
-              <button onClick={() => {emptyCart()}}>vaciar carrito</button>
-              <div>total a pagar {getItemPrice()}</div>
+    <div className="container top-navbar py-5">
+      <div className="row">
+        {cart.length > 0 ? (
+          <>
+            <div className="col-md-8">
+              <table class="table table-striped text-center">
+                <thead>
+                  <tr>
+                    <th>titulo</th>
+                    <th>precio</th>
+                    <th>cantidad</th>
+                    <th>acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cart.map((element) => (
+                    <tr key={element.id}>
+                      <td>{element.descripcion}</td>
+                      <td>{element.precio}</td>
+                      <td>{element.count}</td>
+                      <td><button onClick={() => {deleteItem(element.id)}}>X</button></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            
-          );
-        })
-        
-      ) : (
-        <h1>NO HAY ITEMS EN EL CARRITO</h1>
-      )}
+            <div className="col-md-4">
+              <button className="btn btn-danger" onClick={() => {emptyCart()}}>vaciar carrito</button>
+               <div>total a pagar {getItemPrice()}</div>
+            </div>
+          </>
+        ) : (
+          <div className="col-12 text-center">
+            <h1>NO HAY ITEMS EN EL CARRITO</h1>
+          </div>
+        )}
+      </div>
     </div>
-    </>
   );
 }
 

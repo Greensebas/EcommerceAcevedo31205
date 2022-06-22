@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function NavBar() {
     return <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
-    <div className="container-fluid">
+    <div className="container">
       <Link to="/home" className="navbar-brand">
         <img src="img/FIODORA-PNG.png" alt="" width="40" height="60"></img>
       </Link>

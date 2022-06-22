@@ -23,11 +23,11 @@ const MyProvider = ({children}) => {
             count
         }
 
+
         if (isInCart(newItem.id)){
             const findProduct = cart.find(item => item.id === newItem.id);
             const productIndex = cart.indexOf(findProduct);
             const auxArray = [...cart];  //se crea una copia del estado, para poder modificarlo y despues reemplazar este array auxiliar al array cart
-            console.log(auxArray)
             auxArray[productIndex.index].count += count; //se modifica la copia del array (array auxiliar)
             setCart(auxArray); // se actualiza el estado con la copia del array
         }else{

@@ -3,9 +3,9 @@ import Item from './Item'
 
 function ItemList({productos}) {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap"}}>
-        {productos.map(producto => <Item key= {producto.id} producto={producto} />)}
-    </div>
+    <>
+      {productos.map(producto => <Item key= {producto.id} producto={producto} />)}
+    </>
   )
 }
 

@@ -46,7 +46,12 @@ function ItemListContainer() {
           alert ?
             <div>Error</div>
             :
-            <ItemList productos = {productos} />
+            <div className='container mt-5'>
+              <div className='row'>
+                <ItemList productos = {productos} />
+              </div>
+            </div>
+            
       }
     </>
   );
