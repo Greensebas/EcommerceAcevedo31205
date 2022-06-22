@@ -17,7 +17,7 @@ function Cart() {
               <div >
                 <h2>{element.descripcion}</h2>
                 <h3>{element.count}</h3>
-                <button onClick={() => {deleteItem()}}>quitar item</button>
+                <button onClick={() => {deleteItem(element.id)}}>quitar item</button>
               </div>
               <button onClick={() => {emptyCart()}}>vaciar carrito</button>
               <div>total a pagar {getItemPrice()}</div>
