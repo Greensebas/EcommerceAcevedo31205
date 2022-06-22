@@ -20,9 +20,9 @@ function NavBar() {
             <Link to="/noticias" className="nav-link">Noticias</Link>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="https://google.com" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
-            </a>
+            </span>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><Link to="/productos" className="dropdown-item">Ver todo en productos</Link></li>
               <li><Link to="/categoria/Agenda" className="dropdown-item">Agendas</Link></li>

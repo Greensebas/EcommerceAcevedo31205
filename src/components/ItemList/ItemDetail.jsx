@@ -2,10 +2,26 @@ import "./itemDetail.css";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 function ItemDetail({ producto }) {
   const [count, setCount] = useState(1);
   const [display, setDisplay] = useState(true);
+  const {
+    categoria,
+    descripcion,
+    descripcionDetalle,
+    precio,
+    stock,
+    imagen,
+    imagen2,
+    imagen3,
+    imagen4,
+  } = producto;
+  
+  const {isInCart, addItem} = useContext(CartContext)
+    
 
   const sumar = () => {
     count < stock
@@ -25,20 +41,11 @@ function ItemDetail({ producto }) {
 
   const onAdd = (count) => {
     alert(`Agregaste ${count} productos al carrito`);
+    isInCart(producto.id);
+    addItem(producto, count)
     setDisplay(false);
   };
 
-  const {
-    categoria,
-    descripcion,
-    descripcionDetalle,
-    precio,
-    stock,
-    imagen,
-    imagen2,
-    imagen3,
-    imagen4,
-  } = producto;
 
   return (
     <>
