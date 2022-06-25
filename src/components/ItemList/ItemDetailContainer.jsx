@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
   const { id } = useParams();
-
   const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(false);
@@ -35,12 +34,9 @@ function ItemDetailContainer() {
   return (
     <>
       {loading ? (
-        <div className="d-flex align-items-center justify-content-center">
-          <span className="me-4">Loading...</span>
-          <div
-            className="spinner-grow bg-gradient shadow-lg "
-            role="status"
-          ></div>
+          <div className="d-flex align-items-center justify-content-center">
+          <span className="me-4">Cargando...</span>
+          <div className="spinner-grow bg-gradient shadow-lg " role="status"></div>
         </div>
       ) : alert ? (
         <div>Error</div>

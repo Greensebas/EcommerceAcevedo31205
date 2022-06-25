@@ -1,9 +1,8 @@
-import "./itemDetail.css";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
-import { useState } from "react";
-import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import ItemCount from "./ItemCount";
+import "./itemDetail.css";
 
 function ItemDetail({ producto }) {
   const [count, setCount] = useState(1);
@@ -20,7 +19,7 @@ function ItemDetail({ producto }) {
     imagen4,
   } = producto;
   
-  const {isInCart, addItem} = useContext(CartContext)
+  const { addItem } = useContext(CartContext)
     
 
   const sumar = () => {
@@ -39,10 +38,10 @@ function ItemDetail({ producto }) {
     setCount(1);
   };
 
-  const onAdd = (count) => {
+  const onAdd = () => {
     // alert(`Agregaste ${count} productos al carrito`);
-    isInCart(producto.id);
-    addItem(producto, count)
+    addItem(producto, count);
+    reset();
     setDisplay(false);
   };
 
@@ -94,7 +93,6 @@ function ItemDetail({ producto }) {
                 <ItemCount
                   sumar={sumar}
                   restar={restar}
-                  reset={reset}
                   count={count}
                   onAdd={onAdd}
                 />

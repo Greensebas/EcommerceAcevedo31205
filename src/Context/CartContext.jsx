@@ -12,7 +12,7 @@ const MyProvider = ({children}) => {
 
     // Metodo some que devuelve boolean - ItemDetail (detecta si el producto a agregar ya esta en el cart)
     const isInCart = (id) => {
-        return cart.some(item => item.id === id);
+        return cart.some((item) => item.id === id);
     };
 
     // ItemDetail (se encarga de agregar el producto al cart sin pisar a los agregados anteriormente
@@ -28,10 +28,10 @@ const MyProvider = ({children}) => {
             const findProduct = cart.find(item => item.id === newItem.id);
             const productIndex = cart.indexOf(findProduct);
             const auxArray = [...cart];  //se crea una copia del estado, para poder modificarlo y despues reemplazar este array auxiliar al array cart
-            auxArray[productIndex.index].count += count; //se modifica la copia del array (array auxiliar)
+            auxArray[productIndex].count += count; //se modifica la copia del array (array auxiliar)
             setCart(auxArray); // se actualiza el estado con la copia del array
         }else{
-            setCart([...cart, newItem])
+            setCart([...cart, newItem]);
         }
     };
 

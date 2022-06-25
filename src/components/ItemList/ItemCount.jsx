@@ -25,7 +25,7 @@ function ItemCount ({sumar, restar, reset, count, onAdd}) {
                 </button>
             </div>
             <div>
-                <button className="boton" onClick={() => {onAdd(count); reset()}}>
+                <button className="boton" onClick={() => {onAdd(count)}}>
                     <span className="span s1"></span>
                     <span className="span s2"></span>
                     <span className="span s3"></span>
