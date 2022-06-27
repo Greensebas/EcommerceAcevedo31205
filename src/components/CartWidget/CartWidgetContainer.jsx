@@ -1,9 +1,8 @@
-import React from "react";
 import { useContext } from "react";
+import { Link } from 'react-router-dom';
 import { CartContext } from "../../Context/CartContext";
 import './cartWidget.css';
-import {Link} from 'react-router-dom';
-// import CartWidgetLayout from "./CartWidgetLayout";
+
 
 function CartWidgetContainer() {
 
@@ -14,7 +13,7 @@ function CartWidgetContainer() {
       <Link to="/cart" className="nav-link">
         <div className="carrito">
           <i className="bi bi-cart icono"></i>
-          <i className="numero">{getItemQty()}</i>
+          {getItemQty() > 0 && <i className="numero">{getItemQty()}</i>}
         </div>
       </Link>
     </li>
