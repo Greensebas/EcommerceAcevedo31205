@@ -1,36 +1,46 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import "./itemList.css";
-import productosJson from "../../json/productos.json"
-import { useParams } from "react-router-dom";
 
+import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 
 function ItemListContainer() {
   const {id} = useParams();
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState(false);
 
   
   useEffect(() => {
-    const productosPromise = new Promise((resolve, reject) => {
-      setLoading(true)
-      setTimeout(() => {
-        (!id) ? resolve(productosJson) : resolve(productosJson.filter(producto => producto.categoria === id))
-      }, 2000);
-    })
+    const db = getFirestore();
+    const productsCollection = collection(db, "productos");
 
-    productosPromise
-      .then(result => {
-        setProductos(result)
+    if (id){
+      const q = query(productsCollection, where("categoria", "==", id ));
+      
+      getDocs(q).then(snapshot => {
+        setProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
       })
-      .catch(error => {
-        setAlert(true)
-        console.log(error)
+      .catch((error) =>{
+        setAlert(error);
       })
       .finally(() => {
-        setLoading(false)
+        setLoading(false);
+      });
+    } else {
+      getDocs(productsCollection).then(snapshot => {
+        setProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
       })
+      .catch((error) =>{
+        setAlert(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+      
+    }
+
   }, [id]);
 
 
@@ -74,3 +84,21 @@ export default ItemListContainer;
 
 
 
+    // const productosPromise = new Promise((resolve, reject) => {
+    //   setLoading(true)
+    //   setTimeout(() => {
+    //     (!id) ? resolve(productosJson) : resolve(productosJson.filter(producto => producto.categoria === id))
+    //   }, 2000);
+    // })
+
+    // productosPromise
+    //   .then(result => {
+    //     setProductos(result)
+    //   })
+    //   .catch(error => {
+    //     setAlert(true)
+    //     console.log(error)
+    //   })
+    //   .finally(() => {
+    //     setLoading(false)
+    //   })

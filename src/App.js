@@ -9,8 +9,24 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/ItemList/Banner";
 import Cart from "./components/Cart/Cart";
 import MyProvider from "./Context/CartContext";
+import { initializeApp } from "firebase/app";
+
+
+
 
 function App() {
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBRMwgzPXDU6UYOUibWFDiu0YAKtGCPp94",
+    authDomain: "acevedo31205.firebaseapp.com",
+    projectId: "acevedo31205",
+    storageBucket: "acevedo31205.appspot.com",
+    messagingSenderId: "118886049874",
+    appId: "1:118886049874:web:a831308a7fe322bfc0178b"
+  };
+  
+  initializeApp(firebaseConfig);
+
   return (
     <>
       <BrowserRouter>

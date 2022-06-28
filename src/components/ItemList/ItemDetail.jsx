@@ -14,9 +14,6 @@ function ItemDetail({ producto }) {
     precio,
     stock,
     imagen,
-    imagen2,
-    imagen3,
-    imagen4,
   } = producto;
   
   const { addItem } = useContext(CartContext)
@@ -53,20 +50,6 @@ function ItemDetail({ producto }) {
         <div className="row mt-5">
           <div className="col-lg-5 col-md-12 col-12">
             <img className="img-fluid w-100 pb-1" src={imagen} alt={categoria}/>
-            <div className="small-img-group">
-              <div className="small-img-col">
-                <img className="small-img w-100" src={imagen} alt={categoria} />
-              </div>
-              <div className="small-img-col">
-                <img className="small-img w-100" src={imagen2} alt={categoria} />
-              </div>
-              <div className="small-img-col">
-                <img className="small-img w-100" src={imagen3} alt={categoria} />
-              </div>
-              <div className="small-img-col">
-                <img className="small-img w-100" src={imagen4} alt={categoria} />
-              </div>
-            </div>
           </div>
 
           <div className="col-lg-6 col-md-12 col-12">
