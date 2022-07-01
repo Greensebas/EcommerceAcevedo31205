@@ -1,5 +1,6 @@
 import CartWidgetContainer from "../CartWidget/CartWidgetContainer";
 import {Link} from "react-router-dom";
+import Categorias from "../Categorias/Categorias";
 
 
 function NavBar() {
@@ -25,9 +26,7 @@ function NavBar() {
             </span>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><Link to="/productos" className="dropdown-item">Ver todo en productos</Link></li>
-              <li><Link to="/categoria/Agenda" className="dropdown-item">Agendas</Link></li>
-              <li><Link to="/categoria/Cuaderno" className="dropdown-item">Cuadernos</Link></li>
-              <li><Link to="/categoria/Diario" className="dropdown-item">Diarios</Link></li>
+              <Categorias />
             </ul>
           </li>
           <li className="nav-item">
