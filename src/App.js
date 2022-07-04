@@ -1,15 +1,16 @@
+import { initializeApp } from "firebase/app";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemList/ItemListContainer";
-import ItemDetailContainer from "./components/ItemList/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 import Contacto from "./components/Contacto/Contacto";
 import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
 import Banner from "./components/ItemList/Banner";
-import Cart from "./components/Cart/Cart";
+import ItemDetailContainer from "./components/ItemList/ItemDetailContainer";
+import ItemListContainer from "./components/ItemList/ItemListContainer";
+import NavBar from "./components/NavBar/NavBar";
 import MyProvider from "./Context/CartContext";
-import { initializeApp } from "firebase/app";
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           <Footer />
         </MyProvider>

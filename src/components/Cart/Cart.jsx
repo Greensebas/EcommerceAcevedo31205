@@ -36,15 +36,16 @@ function Cart() {
             <div className="col-md-4">
               <button className="btn btn-danger" onClick={() => {emptyCart()}}>vaciar carrito</button>
                <div>Total a pagar: $ {getItemPrice()}</div>
+              <span className="enlaces">
+                <Link to="/checkout"> Finalizar compra </Link>
+              </span>
             </div>
           </>
         ) : (
           <div className="col-12 text-center">
             <h1 className="vacio">¡Tu carrito está vacío!</h1>
             <h5 className="pregunta">¿No sabés qué comprar? Varios productos te esperan</h5>
-            <span className="enlaces">
-              <Link to="/home"> Click aquí </Link>
-            </span>
+
           </div>
         )}
       </div>
