@@ -9,18 +9,23 @@ function Checkout() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cel, setCel] = useState("");
+  const [buyId, setBuyId] = useState("")
+  const [disable, setDisable] = useState(false)
   const {cart, getItemPrice} = useContext(CartContext);
 
   const db = getFirestore();
   const orderCollection = collection(db, "orders");
 
 
-  function handleClick() {
-
+  function handleClick(e) {
+    
+    // validación mínima de campos vacíos
     if (name===("") || email===("") || cel===("")) {
       alert("no ingreso datos");
       return
     }
+    
+    setDisable(true) // deshabilita el boton para no spamear compras
 
     const order = {
       buyer: {name, email, cel},
@@ -30,7 +35,8 @@ function Checkout() {
 
     // guardar en la base de datos
     addDoc(orderCollection, order).then(({id}) => {
-      console.log(id)
+      
+      setBuyId(id)
     })
 
   }
@@ -42,7 +48,11 @@ function Checkout() {
         <input onChange={(e)=> setName(e.target.value)} placeholder="Ingrese su nombre"></input>
         <input onChange={(e)=> setEmail(e.target.value)} placeholder="Ingrese su e-mail"></input>
         <input onChange={(e)=> setCel(e.target.value)} placeholder="Ingrese un teléfono de contacto"></input>
-        <button onClick={() => handleClick()}>TERMINAR COMPRA</button>
+        <button disabled={disable} onClick={(e) => handleClick(e)}>TERMINAR COMPRA</button>
+        
+      </div>
+      <div>
+        {(buyId !== ("")) && <h2>Numero de órden: {buyId}</h2>}
       </div>
     </div>
   );
