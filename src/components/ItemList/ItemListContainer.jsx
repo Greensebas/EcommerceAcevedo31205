@@ -56,7 +56,7 @@ function ItemListContainer() {
           alert ?
             <div>Error</div>
             :
-            <div className='container mt-5'>
+            <div className='top-navbar container'>
               <div className='row'>
                 <ItemList productos = {productos} />
               </div>
@@ -69,36 +69,3 @@ function ItemListContainer() {
 
 export default ItemListContainer;
 
-
-// ESTO ES PARA HACERLO CON FETCH Y TOMAR LOS PRODUCTOS DESDE EL .JSON
-
-// function ItemListContainer() {
-//   const [productos, setProductos] = useState([]);
-
-//   useEffect(() => {
-//     fetch("productos.json")
-//       .then((res) => res.json())
-//       .then((data) => setProductos(data))
-//       .catch((err) => console.log(err));
-//   }, []);
-
-
-
-    // const productosPromise = new Promise((resolve, reject) => {
-    //   setLoading(true)
-    //   setTimeout(() => {
-    //     (!id) ? resolve(productosJson) : resolve(productosJson.filter(producto => producto.categoria === id))
-    //   }, 2000);
-    // })
-
-    // productosPromise
-    //   .then(result => {
-    //     setProductos(result)
-    //   })
-    //   .catch(error => {
-    //     setAlert(true)
-    //     console.log(error)
-    //   })
-    //   .finally(() => {
-    //     setLoading(false)
-    //   })

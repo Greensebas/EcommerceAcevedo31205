@@ -45,7 +45,9 @@ function Cart() {
           <div className="col-12 text-center">
             <h1 className="vacio">¡Tu carrito está vacío!</h1>
             <h5 className="pregunta">¿No sabés qué comprar? Varios productos te esperan</h5>
-
+            <span className="enlaces">
+                <Link to="/home"> Click aquí! </Link>
+            </span>
           </div>
         )}
       </div>
