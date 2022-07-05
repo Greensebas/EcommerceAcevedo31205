@@ -44,23 +44,3 @@ function ItemDetailContainer() {
 
 export default ItemDetailContainer;
 
-
-
-    // const productoPromise = new Promise((resolve, reject) => {
-    //   setLoading(true);
-    //   setTimeout(() => {
-    //     resolve(productosJson.find(producto => producto.id === id));
-    //   }, 2000);
-    // });
-
-    // productoPromise
-    //   .then((result) => {
-    //     setProducto(result);
-    //   })
-    //   .catch((error) => {
-    //     setAlert(true);
-    //     console.log(error);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //   });

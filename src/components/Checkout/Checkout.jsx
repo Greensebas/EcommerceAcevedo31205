@@ -24,7 +24,7 @@ function Checkout() {
       alert("no ingreso datos");
       return
     }
-    
+
     setDisable(true) // deshabilita el boton para no spamear compras
 
     const order = {
@@ -35,7 +35,6 @@ function Checkout() {
 
     // guardar en la base de datos
     addDoc(orderCollection, order).then(({id}) => {
-      
       setBuyId(id)
     })
 
