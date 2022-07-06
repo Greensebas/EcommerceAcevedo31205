@@ -5,7 +5,7 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import Contacto from "./components/Contacto/Contacto";
 import Footer from "./components/Footer/Footer";
-import Form from "./components/Form/form";
+
 import Home from "./components/Home/Home";
 import Banner from "./components/ItemList/Banner";
 import ItemDetailContainer from "./components/ItemList/ItemDetailContainer";
@@ -44,7 +44,7 @@ function App() {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/form" element={< />} />
           </Routes>
           <Footer />
         </MyProvider>
