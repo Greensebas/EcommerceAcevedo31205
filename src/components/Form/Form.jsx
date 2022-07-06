@@ -1,8 +1,11 @@
 import React from "react";
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./form.css";
+import { useState } from "react";
 
-function Form() {
+function FormCheckout() {
+  const [send, setSend] = useState(false);
+
   return (
     <>
       <Formik
@@ -18,13 +21,18 @@ function Form() {
           if (!valores.nombre) {
             error.nombre = "Por favor ingrese su nombre";
           } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
-            error.nombre = "El nombre solo puede contener letras y espacios hasta 40 caracteres";
+            error.nombre =
+              "El nombre solo puede contener letras y espacios hasta 40 caracteres";
           }
 
           // Validación correo
           if (!valores.correo) {
             error.correo = "Por favor ingrese su correo electrónico";
-          } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)) {
+          } else if (
+            !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+              valores.correo
+            )
+          ) {
             error.correo = "Debe ingresar un correo electrónico válido";
           }
 
@@ -34,61 +42,66 @@ function Form() {
           } else if (!/^[\d\s]{8,15}$/.test(valores.cel)) {
             error.cel = "Debe ingresar un número telefónico";
           }
+
           return error;
         }}
-        onSubmit={() => {
-          console.log("formulario enviado");
+        onSubmit={(valores, { resetForm }) => {
+          resetForm();
+          console.log("formulario enviado", valores);
+          setSend(true);
+          setTimeout(() => setSend(false), 5000);
         }}
       >
-        {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+        {({ errors }) => (
           <div className="container top-navbar py-5">
             <div className="row">
-              <form className=" formulario" onSubmit={handleSubmit}>
+              <Form className=" formulario">
                 <div>
                   <label htmlFor="nombre">Nombre</label>
-                  <input
+                  <Field
                     type="text"
                     id="nombre"
                     name="nombre"
                     placeholder="Ingresa tu nombre y apellido"
-                    value={values.nombre}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
                   />
-                  {touched.nombre && errors.nombre && (
-                    <div className="error">{errors.nombre}</div>
-                  )}
+                  <ErrorMessage
+                    name="nombre"
+                    component={() => (
+                      <div className="error">{errors.nombre}</div>
+                    )}
+                  />
                 </div>
                 <div>
                   <label htmlFor="nombre">Mail</label>
-                  <input
+                  <Field
                     type="text"
                     id="correo"
                     name="correo"
                     placeholder="Ingresa tu e-mail"
-                    value={values.correo}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
                   />
-                  {touched.correo && errors.correo && (
-                    <div className="error">{errors.correo}</div>
-                  )}
+                  <ErrorMessage
+                    name="correo"
+                    component={() => (
+                      <div className="error">{errors.correo}</div>
+                    )}
+                  />
                 </div>
                 <div>
                   <label htmlFor="cel">Cel</label>
-                  <input
+                  <Field
                     type="text"
                     id="cel"
                     name="cel"
                     placeholder="Ingresa un teléfono de contacto"
-                    value={values.cel}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
                   />
-                  {touched.cel && errors.cel && <div className="error">{errors.cel}</div>}
+                  <ErrorMessage
+                    name="cel"
+                    component={() => <div className="error">{errors.cel}</div>}
+                  />
                 </div>
                 <button type="submit">TERMINAR COMPRA</button>
-              </form>
+                {send && <p className="exito">Datos enviados con éxito</p>}
+              </Form>
             </div>
           </div>
         )}
@@ -97,4 +110,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default FormCheckout;
