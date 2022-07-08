@@ -1,10 +1,12 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./form.css";
-import { useState } from "react";
+import {useState, useContext} from 'react';
+import {CartContext} from '../../Context/CartContext';
 
-function FormCheckout() {
+function FormCheckout({handleClick}) {
   const [send, setSend] = useState(false);
+  const {emptyCart} = useContext(CartContext);
 
   return (
     <>
@@ -14,40 +16,40 @@ function FormCheckout() {
           correo: "",
           cel: "",
         }}
-        validate={(valores) => {
+        validate={(values) => {
           let error = {};
 
           // Validación nombre
-          if (!valores.nombre) {
+          if (!values.nombre) {
             error.nombre = "Por favor ingrese su nombre";
-          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.nombre)) {
             error.nombre =
               "El nombre solo puede contener letras y espacios hasta 40 caracteres";
           }
 
           // Validación correo
-          if (!valores.correo) {
+          if (!values.correo) {
             error.correo = "Por favor ingrese su correo electrónico";
           } else if (
             !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-              valores.correo
+              values.correo
             )
           ) {
             error.correo = "Debe ingresar un correo electrónico válido";
           }
 
           // Validación teléfono
-          if (!valores.cel) {
+          if (!values.cel) {
             error.cel = "Por favor ingrese un teléfono de contacto";
-          } else if (!/^[\d\s]{8,15}$/.test(valores.cel)) {
+          } else if (!/^[\d\s]{8,15}$/.test(values.cel)) {
             error.cel = "Debe ingresar un número telefónico";
           }
 
           return error;
         }}
-        onSubmit={(valores, { resetForm }) => {
+        onSubmit={(values, { resetForm }) => {
           resetForm();
-          console.log("formulario enviado", valores);
+          handleClick(values);
           setSend(true);
           setTimeout(() => setSend(false), 5000);
         }}

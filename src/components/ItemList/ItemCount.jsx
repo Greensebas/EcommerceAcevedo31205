@@ -1,6 +1,6 @@
 import "./itemCount.css";
 
-function ItemCount ({sumar, restar, reset, count, onAdd}) {
+function ItemCount ({sumar, restar, count, onAdd}) {
 
   return (
     <>

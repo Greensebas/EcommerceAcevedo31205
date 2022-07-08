@@ -36,7 +36,6 @@ function ItemDetail({ producto }) {
   };
 
   const onAdd = () => {
-    // alert(`Agregaste ${count} productos al carrito`);
     addItem(producto, count);
     reset();
     setDisplay(false);
