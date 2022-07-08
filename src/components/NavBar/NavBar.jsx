@@ -1,6 +1,6 @@
 import CartWidgetContainer from "../CartWidget/CartWidgetContainer";
 import {Link} from "react-router-dom";
-import Categorias from "../Categorias/Categorias";
+import Categories from "../Categories/Categories";
 
 
 function NavBar() {
@@ -18,19 +18,19 @@ function NavBar() {
             <Link to="/home" className="nav-link">Inicio</Link>
           </li>
           <li className="nav-item">
-            <Link to="/noticias" className="nav-link">Noticias</Link>
+            <Link to="/news" className="nav-link">Noticias</Link>
           </li>
           <li className="nav-item dropdown">
             <span className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </span>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><Link to="/productos" className="dropdown-item">Ver todo en productos</Link></li>
-              <Categorias />
+              <li><Link to="/products" className="dropdown-item">Ver todo en productos</Link></li>
+              <Categories />
             </ul>
           </li>
           <li className="nav-item">
-            <Link to="/contacto" className="nav-link">Contacto</Link>
+            <Link to="/contact" className="nav-link">Contacto</Link>
           </li>
           <CartWidgetContainer />
         </ul>

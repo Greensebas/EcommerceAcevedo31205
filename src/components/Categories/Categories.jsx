@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
 
-function Categorias() {
+function Categories() {
     const [category, setCategory] = useState([]);
 
 
@@ -29,4 +29,4 @@ function Categorias() {
   )
 }
 
-export default Categorias
+export default Categories

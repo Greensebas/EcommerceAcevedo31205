@@ -37,11 +37,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="noticias" element={<Banner />} />
-            <Route path="/productos" element={<ItemListContainer />} />
+            <Route path="news" element={<Banner />} />
+            <Route path="/products" element={<ItemListContainer />} />
             <Route path="/categoria/:id" element={<ItemListContainer />} />
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
-            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/contact" element={<Contacto />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/form" element={<FormCheckout />} />
