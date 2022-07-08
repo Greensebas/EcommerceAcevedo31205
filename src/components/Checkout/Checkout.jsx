@@ -19,11 +19,6 @@ function Checkout() {
 
   function handleClick(e) {
     
-    // validación mínima de campos vacíos
-    if (name===("") || email===("") || cel===("")) {
-      alert("no ingreso datos");
-      return
-    }
 
     setDisable(true) // deshabilita el boton para no spamear compras
 
