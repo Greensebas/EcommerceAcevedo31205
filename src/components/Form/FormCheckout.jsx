@@ -1,8 +1,7 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useContext, useState } from 'react';
+import { CartContext } from '../../Context/CartContext';
 import "./form.css";
-import {useState, useContext} from 'react';
-import {CartContext} from '../../Context/CartContext';
 
 function FormCheckout({handleClick}) {
   const [send, setSend] = useState(false);
@@ -50,6 +49,7 @@ function FormCheckout({handleClick}) {
         onSubmit={(values, { resetForm }) => {
           resetForm();
           handleClick(values);
+          emptyCart();
           setSend(true);
           setTimeout(() => setSend(false), 5000);
         }}

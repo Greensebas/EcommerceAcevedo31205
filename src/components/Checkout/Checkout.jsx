@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { useContext, useState } from "react";
+import { CartContext } from "../../Context/CartContext";
 import FormCheckout from "../Form/FormCheckout";
 
 
