@@ -6,17 +6,17 @@ import { doc, getDoc, getFirestore} from "firebase/firestore"
 
 function ItemDetailContainer() {
   const { id } = useParams();
-  const [producto, setProducto] = useState({});
+  const [products, setProducts] = useState({});
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState(false);
 
   useEffect(() => {
     const db = getFirestore();
 
-    const productRef = doc(db, "productos", id);
+    const productRef = doc(db, "products", id);
     
     getDoc(productRef).then((snapshot) => {
-      setProducto({...snapshot.data(), id: snapshot.id});
+      setProducts({...snapshot.data(), id: snapshot.id});
     })
     .catch((error) => {
       setAlert(error);
@@ -36,7 +36,7 @@ function ItemDetailContainer() {
       ) : alert ? (
         <div>Error</div>
       ) : (
-        <ItemDetail producto={producto} />
+        <ItemDetail products={products} />
       )}
     </>
   );

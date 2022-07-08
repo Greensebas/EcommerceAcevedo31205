@@ -17,9 +17,9 @@ const MyProvider = ({children}) => {
 
     // ItemDetail (se encarga de agregar el producto al cart sin pisar a los agregados anteriormente
     // si está duplicado solo aumenta la cantidad)
-    const addItem = (producto, count) => {
+    const addItem = (product, count) => {
         const newItem = {
-            ...producto,
+            ...product,
             count
         }
 

@@ -7,20 +7,20 @@ import { collection, getDocs, getFirestore, query, where } from "firebase/firest
 
 function ItemListContainer() {
   const {id} = useParams();
-  const [productos, setProductos] = useState([]);
+  const [products, setproducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState(false);
 
   
   useEffect(() => {
     const db = getFirestore();
-    const productsCollection = collection(db, "productos");
+    const productsCollection = collection(db, "products");
 
     if (id){
-      const q = query(productsCollection, where("categoria", "==", id ));
+      const q = query(productsCollection, where("category", "==", id ));
       
       getDocs(q).then(snapshot => {
-        setProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
+        setproducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
       })
       .catch((error) =>{
         setAlert(error);
@@ -30,7 +30,7 @@ function ItemListContainer() {
       });
     } else {
       getDocs(productsCollection).then(snapshot => {
-        setProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
+        setproducts(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})))  // esto es para unir el objeto de la db con el id que está por fuera en firestore
       })
       .catch((error) =>{
         setAlert(error);
@@ -58,7 +58,7 @@ function ItemListContainer() {
             :
             <div className='top-navbar container'>
               <div className='row'>
-                <ItemList productos = {productos} />
+                <ItemList products = {products} />
               </div>
             </div>
             

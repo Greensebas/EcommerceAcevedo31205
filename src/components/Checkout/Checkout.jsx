@@ -41,18 +41,4 @@ function Checkout() {
 export default Checkout;
 
 
-/*
-    <div className="container top-navbar py-5">
-      <div className="row">
-        <h1>COMPLETE PARA TERMINAR SU COMPRA</h1>
-        <input onChange={(e)=> setName(e.target.value)} placeholder="Ingrese su nombre"></input>
-        <input onChange={(e)=> setEmail(e.target.value)} placeholder="Ingrese su e-mail"></input>
-        <input onChange={(e)=> setCel(e.target.value)} placeholder="Ingrese un teléfono de contacto"></input>
-        <button disabled={disable} onClick={(e) => handleClick(e)}>TERMINAR COMPRA</button>
-        
-      </div>
-      <div>
-        {(buyId !== ("")) && <h2>Numero de órden: {buyId}</h2>}
-      </div>
-    </div>
-*/ 
+

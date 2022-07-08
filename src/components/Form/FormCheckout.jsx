@@ -1,11 +1,13 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useContext, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { CartContext } from '../../Context/CartContext';
 import "./form.css";
 
 function FormCheckout({handleClick}) {
   const [send, setSend] = useState(false);
   const {emptyCart} = useContext(CartContext);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -51,7 +53,10 @@ function FormCheckout({handleClick}) {
           handleClick(values);
           emptyCart();
           setSend(true);
-          setTimeout(() => setSend(false), 5000);
+          setTimeout(() => {
+            setSend(false);
+            navigate("/home");
+          }, 5000);
         }}
       >
         {({ errors }) => (

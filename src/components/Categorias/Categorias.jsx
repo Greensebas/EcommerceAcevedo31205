@@ -3,23 +3,23 @@ import { collection, getDocs, getFirestore} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
 
 function Categorias() {
-    const [categoria, setCategoria] = useState([]);
+    const [category, setCategory] = useState([]);
 
 
     useEffect(() => {
         const db = getFirestore();
-        const coleccionCategoria = collection(db, "categorias");
+        const categoriesCollection = collection(db, "categories");
         
-        getDocs(coleccionCategoria)
+        getDocs(categoriesCollection)
         .then((snapshot) => {
-            setCategoria(snapshot.docs.map((doc) => doc.data().nombre));
+            setCategory(snapshot.docs.map((doc) => doc.data().name));
         });
     }, [])
     
   return (
     <>
     {
-        categoria.map((el) =>(
+        category.map((el) =>(
             <li key={el}>
                 <Link to={"/categoria/" + el} className="dropdown-item">{el}</Link>
             </li>

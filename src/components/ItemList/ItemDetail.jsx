@@ -4,17 +4,17 @@ import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount";
 import "./itemDetail.css";
 
-function ItemDetail({ producto }) {
+function ItemDetail({ products }) {
   const [count, setCount] = useState(1);
   const [display, setDisplay] = useState(true);
   const {
-    categoria,
-    descripcion,
-    descripcionDetalle,
-    precio,
+    category,
+    description,
+    descriptionDetail,
+    price,
     stock,
-    imagen,
-  } = producto;
+    image,
+  } = products;
   
   const { addItem } = useContext(CartContext)
     
@@ -36,7 +36,7 @@ function ItemDetail({ producto }) {
   };
 
   const onAdd = () => {
-    addItem(producto, count);
+    addItem(products, count);
     reset();
     setDisplay(false);
   };
@@ -48,7 +48,7 @@ function ItemDetail({ producto }) {
         <hr />
         <div className="row mt-5">
           <div className="col-lg-5 col-md-12 col-12">
-            <img className="img-fluid w-100 pb-1" src={imagen} alt={categoria}/>
+            <img className="img-fluid w-100 pb-1" src={image} alt={category}/>
           </div>
 
           <div className="col-lg-6 col-md-12 col-12">
@@ -58,17 +58,17 @@ function ItemDetail({ producto }) {
                   <Link to="/home"> Inicio </Link>
                 </span>
                 <span>
-                  <Link to={`/categoria/${categoria}`}> {categoria} </Link>
+                  <Link to={`/categoria/${category}`}> {category} </Link>
                 </span>
                 <span>
-                  <a href="x"> {descripcion} </a>
+                  <a href="x"> {description} </a>
                 </span>
               </div>
-              <h1>{descripcion}</h1>
-              <h2>$ {precio}</h2>
+              <h1>{description}</h1>
+              <h2>$ {price}</h2>
             </div>
             <h4>Detalle del producto</h4>
-            <span>{descripcionDetalle}</span>
+            <span>{descriptionDetail}</span>
 
             {display ? (
               <div className="count-container">
