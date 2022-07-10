@@ -21,7 +21,7 @@ function Cart() {
                     <th>Eliminar</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="align-middle" >
                   {cart.map((element) => (
                     <tr key={element.id}>
                       <td>{element.description}</td>
