@@ -11,29 +11,33 @@ function Cart() {
       <div className="row">
         {cart.length > 0 ? (
           <>
-            <div className="col-md-8">
-              <table className="table table-striped text-center">
+            <div className="col-md-8 form-group">
+              <table className="table text-center">
                 <thead>
                   <tr>
-                    <th>titulo</th>
-                    <th>precio</th>
-                    <th>cantidad</th>
-                    <th>acciones</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>
                   {cart.map((element) => (
                     <tr key={element.id}>
-                      <td>{element.descripcion}</td>
-                      <td>{element.precio}</td>
+                      <td>{element.description}</td>
+                      <td>{element.price}</td>
                       <td>{element.count}</td>
-                      <td><button onClick={() => {deleteItem(element.id)}}>X</button></td>
+                      <td>
+                        <button className="btn" onClick={() => {deleteItem(element.id)}}>
+                        <i className="bi bi-trash3"></i>
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 text-center">
               <button className="btn btn-danger" onClick={() => {emptyCart()}}>vaciar carrito</button>
                <div>Total a pagar: $ {getItemPrice()}</div>
               <span className="enlaces">

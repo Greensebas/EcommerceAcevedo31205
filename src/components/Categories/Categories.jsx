@@ -21,7 +21,7 @@ function Categories() {
     {
         category.map((el) =>(
             <li key={el}>
-                <Link to={"/categoria/" + el} className="dropdown-item">{el}</Link>
+                <Link to={"/category/" + el} className="dropdown-item">{el}</Link>
             </li>
         ) )
     }

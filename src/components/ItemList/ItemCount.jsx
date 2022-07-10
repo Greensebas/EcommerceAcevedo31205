@@ -1,6 +1,6 @@
 import "./itemCount.css";
 
-function ItemCount ({sumar, restar, count, onAdd}) {
+function ItemCount ({add, subtract, count, onAdd}) {
 
   return (
     <>
@@ -8,7 +8,7 @@ function ItemCount ({sumar, restar, count, onAdd}) {
         <div className="text-center">
           <div className="card-body">
             <div className="contenedor">
-                <button className="boton" onClick={restar}>
+                <button className="boton" onClick={subtract}>
                     <span className="span s1"></span>
                     <span className="span s2"></span>
                     <span className="span s3"></span>
@@ -16,7 +16,7 @@ function ItemCount ({sumar, restar, count, onAdd}) {
                     Eliminar
                 </button>
                 <span className="contador">{count}</span>
-                <button className="boton" onClick={sumar}>
+                <button className="boton" onClick={add}>
                     <span className="span s1"></span>
                     <span className="span s2"></span>
                     <span className="span s3"></span>

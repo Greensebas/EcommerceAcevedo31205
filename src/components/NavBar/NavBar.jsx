@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import CartWidgetContainer from "../CartWidget/CartWidgetContainer";
-import {Link} from "react-router-dom";
 import Categories from "../Categories/Categories";
 
 

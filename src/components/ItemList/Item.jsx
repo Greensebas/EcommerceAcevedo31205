@@ -13,7 +13,7 @@ function Item({product}) {
           <p className="card-text">
               Stock: {stock}
           </p>
-          <Link to={`/producto/${id}`} className="btn btn-primary">Ver detalle</Link>
+          <Link to={`/product/${id}`} className="btn btn-primary">Ver detalle</Link>
         </div>
     </div>
     </div>

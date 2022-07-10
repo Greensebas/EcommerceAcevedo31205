@@ -13,19 +13,19 @@ function ItemDetail({ products }) {
     descriptionDetail,
     price,
     stock,
-    image,
+    image
   } = products;
   
   const { addItem } = useContext(CartContext)
     
 
-  const sumar = () => {
+  const add = () => {
     count < stock
       ? setCount(count + 1)
       : alert("No puedes agregar más productos");
   };
 
-  const restar = () => {
+  const subtract = () => {
     count > 1
       ? setCount(count - 1)
       : alert("No puedes solicitar menos de 1 producto");
@@ -55,13 +55,13 @@ function ItemDetail({ products }) {
             <div>
               <div className="enlaces">
                 <span>
-                  <Link to="/home"> Inicio </Link>
+                  <Link to="/home"> Inicio /</Link>
                 </span>
                 <span>
-                  <Link to={`/categoria/${category}`}> {category} </Link>
+                  <Link to={`/category/${category}`}> {category} /</Link>
                 </span>
                 <span>
-                  <a href="x"> {description} </a>
+                  <Link to={`/category/${category}`} > {description} </Link>
                 </span>
               </div>
               <h1>{description}</h1>
@@ -73,8 +73,8 @@ function ItemDetail({ products }) {
             {display ? (
               <div className="count-container">
                 <ItemCount
-                  sumar={sumar}
-                  restar={restar}
+                  add={add}
+                  subtract={subtract}
                   count={count}
                   onAdd={onAdd}
                 />

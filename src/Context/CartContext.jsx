@@ -52,7 +52,7 @@ const MyProvider = ({children}) => {
 
     // Metodo reduce - Cart (retorna el precio total del carrito)
     const getItemPrice = () => {
-        return cart.reduce((acc, x) => acc += x.count * x.precio, 0)
+        return cart.reduce((acc, x) => acc += x.count * x.price, 0)
     };
 
 
