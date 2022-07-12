@@ -6,7 +6,7 @@ function Item({product}) {
     const {id, description, price, stock, image} = product
   return (
     <div className='col-lg-3 col-md-4 col-sm-6 col-12 mb-2'>
-      <div className="card shadow p-3 mb-5 bg-body rounded">
+      <div className="card shadow p-3 mt-3 bg-body rounded">
         <img src={image} className="card-img-top" alt="..."></img>
         <div className="card-body">
           <h4 className="card-title description">{description}</h4>

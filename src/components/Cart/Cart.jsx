@@ -28,7 +28,7 @@ function Cart() {
                       <td>{element.price}</td>
                       <td>{element.count}</td>
                       <td>
-                        <button className="btn" onClick={() => {deleteItem(element.id)}}>
+                        <button className="btn btn-h" onClick={() => {deleteItem(element.id)}}>
                         <i className="bi bi-trash3"></i>
                         </button>
                       </td>

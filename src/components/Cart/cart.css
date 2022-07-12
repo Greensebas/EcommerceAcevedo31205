@@ -24,3 +24,7 @@
 .tr-al {
     text-align: center;
 }
+
+.btn-h :hover {
+    color: red;
+}
