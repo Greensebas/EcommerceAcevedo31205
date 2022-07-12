@@ -64,11 +64,14 @@ function ItemListContainer() {
       ) : alert ? (
         <div>Error</div>
       ) : (
-        <div className="top-navbar container">
+        <>
+        <div className="top-nav"></div>
+        <div className="container">
           <div className="row">
             <ItemList products={products} />
           </div>
         </div>
+        </>
       )}
     </>
   );
