@@ -53,3 +53,8 @@
 .simbol {
     font-size: 1.5em;
 }
+
+.simbol:hover {
+    cursor: pointer;
+    text-shadow: 0.1px 0.1px 2px;
+}
