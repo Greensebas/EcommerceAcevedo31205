@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useContext, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { CartContext } from '../../Context/CartContext';
-import "./form.css";
+import "./formCheckout.css";
 
 function FormCheckout({handleClick}) {
   const [send, setSend] = useState(false);
@@ -106,7 +106,9 @@ function FormCheckout({handleClick}) {
                     component={() => <div className="error">{errors.cel}</div>}
                   />
                 </div>
-                <button type="submit">TERMINAR COMPRA</button>
+                <div className="d-grid gap-2">
+                <button className="btn btn-outline-dark" type="submit">TERMINAR COMPRA</button>
+                </div>
                 {send && <p className="exito">Datos enviados con éxito</p>}
               </Form>
             </div>

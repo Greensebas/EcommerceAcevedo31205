@@ -1,5 +1,4 @@
 .flex-container {
-    background-color: #000;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,8 +21,11 @@
 }
 
 .contador {
-    padding: 20px;
-    color:#fff;
+    min-width: 110px;
+    padding: 10px 30px;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:rgb(0, 0, 0);
 }
 
 .boton {
@@ -48,52 +50,6 @@
     color: #fff;
 }
 
-.span {
-    position: absolute;
-    background: #fff;
-    transition: 0.5s;
-}
-
-.s1 {
-    width: 100%;
-    height: 1px;
-    top: 0;
-    left: -100%;
-}
-
-.s2 {
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    right: -100%;
-}
-
-.s3 {
-    width: 1px;
-    height: 100%;
-    bottom: -100%;
-    left: 0;
-}
-
-.s4 {
-    width: 1px;
-    height: 100%;
-    top: -100%;
-    right: 0;
-}
-
-.boton:hover .s1 {
-    left: 0;
-}
-
-.boton:hover .s2 {
-    right: 0;
-}
-
-.boton:hover .s3 {
-    bottom: 0;
-}
-
-.boton:hover .s4 {
-    top: 0;
+.simbol {
+    font-size: 1.5em;
 }

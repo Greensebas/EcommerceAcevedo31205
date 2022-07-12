@@ -37,16 +37,3 @@
     margin-top: 10px;
 }
 
-.boton-link {
-    overflow: hidden;
-}
-
-.boton {
-    position: relative;
-    border: none;
-    outline: none;
-    background-color: rgba(103, 101, 103, 0.623);
-    color: rgb(202, 198, 198);
-    transition: 0.5s;
-    overflow: hidden;
-}

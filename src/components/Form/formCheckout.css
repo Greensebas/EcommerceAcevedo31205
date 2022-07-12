@@ -41,7 +41,7 @@
 	font-size: 12px;
 }
 
-.formulario button[type="submit"] {
+/* .formulario button[type="submit"] {
 	display: block;
 	background: #0085FF;
 	font-weight: 600;
@@ -58,7 +58,7 @@
 
 .formulario button[type="submit"]:hover {
 	background: #0051ff;
-}
+} */
 
 .formulario .exito {
 	text-align: center;

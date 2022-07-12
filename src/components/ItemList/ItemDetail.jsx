@@ -83,6 +83,7 @@ function ItemDetail({ products }) {
               <div className="flex-cont">
                     <div className="d-grid gap-2">
                       <Link to={`/cart`} className="btn btn-outline-dark">Ir al carrito</Link>
+                      <Link to={`/home`} className="btn btn-outline-dark">Seguir comprando</Link>
                     </div>
               </div>
             )}
