@@ -81,22 +81,9 @@ function ItemDetail({ products }) {
               </div>
             ) : (
               <div className="flex-cont">
-                <div className="text-center">
-                  <div className="card-body">
-                    <div>
-                      <Link to={`/cart`}>
-                        <button className="boton">
-                          <span className="span s1"></span>
-                          <span className="span s2"></span>
-                          <span className="span s3"></span>
-                          <span className="span s4"></span>
-                          Ir al carrito
-                        </button>
-                          
-                      </Link>
+                    <div className="d-grid gap-2">
+                      <Link to={`/cart`} className="btn btn-outline-dark">Ir al carrito</Link>
                     </div>
-                  </div>
-                </div>
               </div>
             )}
           </div>
