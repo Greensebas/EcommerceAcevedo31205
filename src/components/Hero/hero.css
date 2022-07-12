@@ -1,7 +1,6 @@
 .hero {
     background: #fff;
     display: flex;
-    min-height: 50vh;
     align-items: center;
 }
 
@@ -18,4 +17,22 @@
     background-position-y: center;
 
     background-clip: text;
+}
+
+@media screen and (max-width: 992px){
+    .texto {
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .texto {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .texto {
+        font-size: 75px;
+    }
 }
