@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount";
 import "./itemDetail.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ItemDetail({ products }) {
   const [count, setCount] = useState(1);
@@ -17,18 +19,42 @@ function ItemDetail({ products }) {
   } = products;
   
   const { addItem } = useContext(CartContext)
+
+  const maxAdd = () => {
+    toast.info('No puedes agregar más productos al carrito', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+  }
+
+  const minAdd = () => {
+    toast.info('No puedes agregar menos de 1 producto al carrito', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+  }
     
 
   const add = () => {
     count < stock
       ? setCount(count + 1)
-      : alert("No puedes agregar más productos");
+      : maxAdd();
   };
 
   const subtract = () => {
     count > 1
       ? setCount(count - 1)
-      : alert("No puedes solicitar menos de 1 producto");
+      : minAdd();
   };
 
   const reset = () => {
@@ -89,6 +115,7 @@ function ItemDetail({ products }) {
             )}
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

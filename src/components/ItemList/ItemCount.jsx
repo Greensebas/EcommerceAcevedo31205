@@ -9,11 +9,11 @@ function ItemCount ({add, subtract, count, onAdd}) {
           <div className="card-body">
             <div className="contenedor align-middle">
                 <div className="simbol" onClick={subtract}>
-                  <i class="bi bi-dash-circle-fill"></i>
+                  <i className="bi bi-dash-circle-fill"></i>
                 </div>
                 <div className="contador">{count}</div>
                 <div className="simbol" onClick={add}>
-                  <i class="bi bi-plus-circle-fill"></i>
+                  <i className="bi bi-plus-circle-fill"></i>
                 </div>
             </div>
             <div>
