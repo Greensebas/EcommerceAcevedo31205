@@ -1,4 +1,6 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
+import { toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext();
 
@@ -8,9 +10,25 @@ const {Provider} = CartContext
 
 const MyProvider = ({children}) => {
 
- 
-
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('products')) ?? []);
+    
+    const toastId = useRef(null);
+
+    const maxStock = () => {
+        if(! toast.isActive(toastId.current)) {
+          toastId.current = toast('Stock insuficiente', {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+          transition: Zoom,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+        }    
+      }
 
     useEffect(() => {
             localStorage.setItem('products', JSON.stringify(cart));
@@ -34,8 +52,13 @@ const MyProvider = ({children}) => {
             const findProduct = cart.find(item => item.id === newItem.id);
             const productIndex = cart.indexOf(findProduct);
             const auxArray = [...cart];  //se crea una copia del estado, para poder modificarlo y despues reemplazar este array auxiliar al array cart
-            auxArray[productIndex].count += count; //se modifica la copia del array (array auxiliar)
+            const total = auxArray[productIndex].count += count; //se modifica la copia del array (array auxiliar)
+            if(total > newItem.stock) {
+                maxStock();
+                return;
+            }else{
             setCart(auxArray); // se actualiza el estado con la copia del array
+            }
         }else{
             setCart([...cart, newItem]);
         }
@@ -44,6 +67,7 @@ const MyProvider = ({children}) => {
     // Cart (vacía el carrito)
     const emptyCart = () => {
         setCart([]);
+        localStorage.clear();
     };
 
     // Metodo filter - Cart (en funcion del ID retorna un nuevo array sin el producto seleccionado)

@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { CartContext } from "../../Context/CartContext";
 import ItemCount from "./ItemCount";
 import "./itemDetail.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 function ItemDetail({ products }) {
+  const { addItem } = useContext(CartContext);
   const [count, setCount] = useState(1);
   const [display, setDisplay] = useState(true);
   const {
@@ -17,31 +18,40 @@ function ItemDetail({ products }) {
     stock,
     image
   } = products;
+
+  const toastId = useRef(null);
   
-  const { addItem } = useContext(CartContext)
 
   const maxAdd = () => {
-    toast.info('No puedes agregar más productos al carrito', {
+    if(! toast.isActive(toastId.current)) {
+      toastId.current = toast('No puedes agregar más productos al carrito', {
       position: "top-right",
       autoClose: 3000,
+      theme: "dark",
+      transition: Zoom,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       });
+    }    
   }
 
   const minAdd = () => {
-    toast.info('No puedes agregar menos de 1 producto al carrito', {
+    if(! toast.isActive(toastId.current)) {
+      toastId.current =     toast('No puedes agregar menos de 1 producto al carrito', {
       position: "top-right",
       autoClose: 3000,
+      theme: "dark",
+      transition: Zoom,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
       });
+    }
   }
     
 
@@ -122,8 +132,3 @@ function ItemDetail({ products }) {
 }
 
 export default ItemDetail;
-
-/*
-
-
-*/
