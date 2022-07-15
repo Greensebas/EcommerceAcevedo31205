@@ -35,14 +35,35 @@ function Cart() {
                     </tr>
                   ))}
                 </tbody>
+                <tbody>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <span className="d-grid gap-2">
+                        <button className="btn btn-outline-danger btn-cancel my-2" onClick={() => {emptyCart()}}>vaciar carrito</button>
+                      </span>
+                    </td>
+
+                </tbody>
               </table>
             </div>
-            <div className="col-md-4 text-center">
-              <button className="btn btn-danger" onClick={() => {emptyCart()}}>vaciar carrito</button>
-               <div>Total a pagar: $ {getItemPrice()}</div>
-              <span className="enlaces">
-                <Link to="/checkout"> Finalizar compra </Link>
+            
+            <div className="col-md-4 bg-light">
+              <div>
+                <span className="h3 my-3 res">Resumen:</span>
+               <div className="h5">Subtotal: $ {getItemPrice()}</div>
+               <div className="h5">Costo de envío: $0</div>
+               <hr />
+               <div className="h2">Total a pagar: $ {getItemPrice()}</div>
+              <span className='d-grid gap-2'>
+                <Link to="/checkout" className="btn btn-outline-dark my-3"> Finalizar compra </Link>
               </span>
+              </div>
+              <div>
+
+              </div>
             </div>
           </>
         ) : (

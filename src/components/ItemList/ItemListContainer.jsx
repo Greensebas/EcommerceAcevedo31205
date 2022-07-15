@@ -54,7 +54,7 @@ function ItemListContainer() {
   return (
     <>
       {loading ? (
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center my-5">
           <span className="me-4">Cargando...</span>
           <div
             className="spinner-grow bg-gradient shadow-lg "

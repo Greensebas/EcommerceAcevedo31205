@@ -1,9 +1,10 @@
 import React from "react";
+import './contacto.css'
 
 function Contacto() {
   return (
     <div className="container">
-      <div className="hello">
+      <div className="hello my-3 shadow">
         <div className="divMargin">
           <h1>"FIODORA DISEÑO GRÁFICO"</h1>
           <div className="text-center">

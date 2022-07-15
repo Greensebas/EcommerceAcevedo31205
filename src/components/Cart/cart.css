@@ -28,3 +28,15 @@
 .btn-h :hover {
     color: red;
 }
+
+.res {
+    display: block;
+}
+
+.ticket {
+    background-color: rgb(113, 113, 113);
+}
+
+.btn-cancel {
+    display: block;
+}

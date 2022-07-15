@@ -6,6 +6,7 @@
     background-size: cover;
     height: 50vh;
     display: flex;
+    border-radius: 8px;
   }
 
 .divMargin {
