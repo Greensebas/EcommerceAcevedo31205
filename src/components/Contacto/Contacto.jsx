@@ -6,11 +6,46 @@ function Contacto() {
       <div className="hello">
         <div className="divMargin">
           <h1>"FIODORA DISEÑO GRÁFICO"</h1>
-          <p>
-            FIODORA es un espacio dedicado a la encuadernación artesanal de
-            agendas, fotolibros, cuadernos y libretas cuidando hasta el último
-            detalle{" "}
-          </p>
+          <div className="text-center">
+              <p className="h5">Contactanos!</p>
+              <span>
+                <a href="sms:2325592036" className="dropdown-item">
+                  <i className="bi bi-whatsapp dspl me-2"></i>
+                  <p className="dspl">+54 9 2325 592036</p>
+                </a>
+              </span>
+              <span>
+                <a
+                  href="https://www.instagram.com/fiodora_dg/"
+                  className="dropdown-item"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <i className="bi bi-instagram dspl me-2"></i>
+                  <p className="dspl">fiodora_dg</p>
+                </a>
+              </span>
+              <span>
+                <a
+                  href="https://www.facebook.com/Fiodora-1502130800094570"
+                  className="dropdown-item"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <i className="bi bi-facebook dspl me-2"></i>
+                  <p className="dspl">Fiodora</p>
+                </a>
+              </span>
+              <span>
+                <a
+                  href="mailto:martinasalaberry1@gmail.com"
+                  className="dropdown-item"
+                >
+                  <i className="bi bi-envelope icon dspl me-2"></i>
+                  <p className="dspl">martinasalaberry1@gmail.com</p>
+                </a>
+              </span>
+            </div>
         </div>
       </div>
     </div>
