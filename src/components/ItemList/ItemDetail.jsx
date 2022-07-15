@@ -80,11 +80,11 @@ function ItemDetail({ products }) {
 
   return (
     <>
-      <div className="container sproduct my-5 pt-5">
+      <div className="container sproduct my-3 pt-3">
         <hr />
-        <div className="row mt-5">
+        <div className="row my-5">
           <div className="col-lg-5 col-md-12 col-12">
-            <img className="img-fluid w-100 pb-1" src={image} alt={category}/>
+            <img className="img-fluid w-100" src={image} alt={category}/>
           </div>
 
           <div className="col-lg-6 col-md-12 col-12">
@@ -126,6 +126,7 @@ function ItemDetail({ products }) {
           </div>
         </div>
         <ToastContainer />
+        <hr />
       </div>
     </>
   );
