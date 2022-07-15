@@ -7,7 +7,7 @@ import "./home.css";
 function Home() {
   return (
     <div>
-      <div className='top-nav'></div>
+      <div className=''></div>
     <Banner />
     <ItemListContainer />
     <HeroContainer />
