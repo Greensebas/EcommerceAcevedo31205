@@ -83,7 +83,7 @@ function ItemDetail({ products }) {
       <div className="container sproduct my-3 pt-3">
         <hr />
         <div className="row my-5">
-          <div className="col-lg-5 col-md-12 col-12">
+          <div className="col-lg-5 col-md-12 col-12 mb-2">
             <img className="img-fluid w-100" src={image} alt={category}/>
           </div>
 
