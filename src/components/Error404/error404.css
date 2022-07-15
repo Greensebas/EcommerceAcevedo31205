@@ -1,0 +1,20 @@
+.nav-top {
+    height: 86px;
+}
+
+.emoji-size {
+    margin-top: 4em;
+    font-size: 10em;
+    color: rgb(112, 112, 112);
+}
+
+.error {
+    color: rgb(112, 112, 112);
+    font-size: 4em;
+}
+
+.not-found {
+    color: rgb(137, 137, 137);
+    font-size: 2em;
+    margin-bottom: 2em;
+}

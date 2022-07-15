@@ -47,7 +47,6 @@ const MyProvider = ({children}) => {
             count
         }
 
-
         if (isInCart(newItem.id)){
             const findProduct = cart.find(item => item.id === newItem.id);
             const productIndex = cart.indexOf(findProduct);

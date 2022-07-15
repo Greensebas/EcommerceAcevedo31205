@@ -4,6 +4,7 @@ import "./App.css";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import Contacto from "./components/Contacto/Contacto";
+import Error404 from "./components/Error404/Error404";
 import Footer from "./components/Footer/Footer";
 import FormCheckout from "./components/Form/FormCheckout";
 import Home from "./components/Home/Home";
@@ -45,6 +46,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/form" element={<FormCheckout />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
           <Footer />
         </MyProvider>
