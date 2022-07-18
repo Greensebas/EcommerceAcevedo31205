@@ -36,7 +36,7 @@ function Cart() {
                   ))}
                 </tbody>
                 <tbody>
-
+                  <tr>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -45,6 +45,7 @@ function Cart() {
                         <button className="btn btn-outline-danger btn-cancel my-2" onClick={() => {emptyCart()}}>vaciar carrito</button>
                       </span>
                     </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
