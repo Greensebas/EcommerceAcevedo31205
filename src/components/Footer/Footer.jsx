@@ -90,7 +90,7 @@ function Footer() {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <i class="bi bi-github dspl me-2"></i>
+                  <i className="bi bi-github dspl me-2"></i>
                   <p className="dspl">Greensebas</p>
                 </a>
               </span>
@@ -101,7 +101,7 @@ function Footer() {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <i class="bi bi-linkedin dspl me-2"></i>
+                  <i className="bi bi-linkedin dspl me-2"></i>
                   <p className="dspl">Sebastián Acevedo</p>
                 </a>
               </span>
