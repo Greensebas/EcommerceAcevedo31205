@@ -32,14 +32,12 @@ function Checkout() {
     <>
     <FormCheckout handleClick={handleClick}/>
     <div className="container my-5">
-      <div className="text-center">
       {(buyId !== ("")) && 
-        <div>
+        <div className="text-center">
           <span className="h2">Muchas gracias por su compra!</span>
           <div className="h1 my-5">Numero de órden: {buyId}</div>
           <span className="h3">Aguarde y será redirigido a nuestra página principal</span>
         </div>}
-      </div>
     </div>
     </>
   );

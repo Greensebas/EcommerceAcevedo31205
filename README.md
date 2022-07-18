@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Fiodora DG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Cómo correr este proyecto:
+#### El deploy de este proyecto se realizó en Firebase, podés ingresar y probarlo en el siguiente link:
+https://react-davico-luz-d20.vercel.app/
 
-In the project directory, you can run:
+#### Para correrlo de manera local podés seguir los siguientes pasos:
+- Descargá el proyecto de este repositorio.
+- Abrí el directorio del proyecto en tu editor de código favorito.
+- Corré el comando npm start.
+- Abrí http://localhost:3000 para verlo en tu navegador.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Build
+Este proyecto fue realizado con React, trayendo los productos de una base de datos ubicada en Firebase.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Librerías utilizadas
 
-### `npm test`
+- React-router-dom: Paquete para implementar routing dinámico en una web app. En este proyecto, utilizado para el routing. Añadilo a tu proyecto con:
+```sh
+npm add react-router-dom.
+```
+- Bootstrap: Librería que provee componentes de Bootstrap como componentes puros de React. En este proyecto, utilizada (entre otro lugares) en la Navbar y las card de producto. Añadilo a tu proyecto con:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install bootstrap.
+```
 
-### `npm run build`
+- Formik: Librería utilizada para para validación y funcionamiento de forms. En este proyecto, utilizada en el form de envío de pedido (checkout). Añadilo a tu proyecto con:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install formik --save
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Bootstrap-icons: Librería utilizada para añadir íconos. En este proyecto, utilizada para el ícono de Cart, Footer, Error404 y otros componentes. Añadilo a tu proyecto con:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm i bootstrap-icons
+```
 
-### `npm run eject`
+- Firebase:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+npm i bootstrap-icons
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React-toastify: Librería utilizada para añadir alertas personalizadas. En este proyecto, utilizadas para avisar al usuario cuando intenta realizar una compra inválida (pedido mayor al stock, menor que 1, etcétera). Añadilas a tu proyecto con:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sh
+npm install --save react-toastify
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Encontré un error o tengo una sugerencia!
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contactame a greensebas@hotmail.com
