@@ -14,9 +14,9 @@ const MyProvider = ({children}) => {
     
     const toastId = useRef(null);
 
-    const maxStock = () => {
+    const maxStock = (totalActual) => {
         if(! toast.isActive(toastId.current)) {
-          toastId.current = toast('Stock insuficiente', {
+          toastId.current = toast(`Stock insuficiente, solo hay ${totalActual} unidades disponibles y ya están en tu carrito!`, {
           position: "top-right",
           autoClose: 3000,
           theme: "dark",
@@ -51,11 +51,12 @@ const MyProvider = ({children}) => {
             const findProduct = cart.find(item => item.id === newItem.id);
             const productIndex = cart.indexOf(findProduct);
             const auxArray = [...cart];  //se crea una copia del estado, para poder modificarlo y despues reemplazar este array auxiliar al array cart
-            const total = auxArray[productIndex].count += count; //se modifica la copia del array (array auxiliar)
-            if(total > newItem.stock) {
-                maxStock();
+            const total = auxArray[productIndex].count; //se obtiene la cantidad actual del producto en el cart
+            if(total >= newItem.stock) {
+                maxStock(total); //si la cantidad actual es mayor a la cantidad maxima del producto, se muestra un msj de error y no se agrega nada
                 return;
             }else{
+            auxArray[productIndex].count += count; // si la cantidad actual es menor a la cantidad máxima del producto, se agrega el count a la cantidad actual
             setCart(auxArray); // se actualiza el estado con la copia del array
             }
         }else{
