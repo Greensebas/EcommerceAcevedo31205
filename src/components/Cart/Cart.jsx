@@ -45,7 +45,6 @@ function Cart() {
                         <button className="btn btn-outline-danger btn-cancel my-2" onClick={() => {emptyCart()}}>vaciar carrito</button>
                       </span>
                     </td>
-
                 </tbody>
               </table>
             </div>

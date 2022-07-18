@@ -22,6 +22,7 @@ https://acevedo31205.web.app/
 - Se creó un componente Error404 en caso de ingresar una ruta errónea.
 - Se Realizó un control de stock desde el frontend, esto significa que no se modifica la base de datos, solo se valida que el pedido no sea mayor al stock disponible.
 - Se realizó validación de formulario en el checkout.
+- Se realizó footer con rutas a las redes del proyecto real y del desarrollador.
 - Se adjunta GIF del proyecto 
 
 ---
