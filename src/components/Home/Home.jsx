@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroContainer from '../Hero/HeroContainer';
 import ItemListContainer from '../ItemList/ItemListContainer';
-import Banner from '../ItemList/Banner';
+import Banner from '../Banner/Banner';
 import "./home.css";
 
 function Home() {

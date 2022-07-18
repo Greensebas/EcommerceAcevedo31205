@@ -8,7 +8,7 @@ import Error404 from "./components/Error404/Error404";
 import Footer from "./components/Footer/Footer";
 import FormCheckout from "./components/Form/FormCheckout";
 import Home from "./components/Home/Home";
-import Banner from "./components/ItemList/Banner";
+import Banner from "./components/Banner/Banner";
 import ItemDetailContainer from "./components/ItemList/ItemDetailContainer";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
