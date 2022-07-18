@@ -6,7 +6,7 @@
 
 ## Cómo correr este proyecto:
 #### El deploy de este proyecto se realizó en Firebase, podés ingresar y probarlo en el siguiente link:
-https://react-davico-luz-d20.vercel.app/
+https://acevedo31205.web.app/
 
 #### Para correrlo de manera local podés seguir los siguientes pasos:
 - Descargá el proyecto de este repositorio.
